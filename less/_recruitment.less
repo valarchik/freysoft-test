@@ -1,0 +1,181 @@
+//
+// Mobile
+//_______________________________
+
+.recruitment {
+    background-color: @color_background_a;
+    position: relative;
+
+    .recruitment__header {
+        padding: @indent_l 0;
+
+        .recruitment__title {
+            .mix-title( @line-height: 35px);
+
+        }
+
+        .recruitment__text {
+            line-height: 28px;
+            max-width: 338px;
+            margin-top: @indent_m;
+        }
+
+    }
+
+    .slick-slider .slick-track {
+        display: flex;
+        justify-content: center;
+    }
+
+    .slick-dots {
+        color: transparent;
+        font-size: 0;
+        display: flex !important;
+        justify-content: center;
+        padding: 1rem;
+
+        li {
+            margin-right: 1rem;
+        }
+
+        button {
+            width: 16px;
+            height: 16px;
+            border-radius: 16px;
+            background: #0000001a;
+            border: none;
+            box-shadow: inset 0px 2px 2px 0px rgba(0, 0, 0, 0.11);
+        }
+
+        .slick-active {
+            button {
+                width: 40px;
+                background: @color_brandprimary;
+                width: 40px;
+                background: #18e8a4;
+                box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    .recruitment__cards {
+        counter-reset: section;
+
+        .recruitment__card {
+            background-color: white;
+            border-radius: 16px;
+            padding: @indent_m @indent_s @indent_xl @indent_s;
+            position: relative;
+            margin-left: @indent_s;
+            max-width: 620px;
+            min-width: 280px;
+
+            &:before {
+                counter-increment: section;
+                content: counter(section);
+                position: absolute;
+                bottom: 30%;
+                right: 30%;
+                font-size: 260px;
+                font-weight: @font-weight_xl;
+                color: #EFDCFB;
+                z-index: 1;
+            }
+
+            &:nth-child(2n) {
+                &:before {
+                    color: #CFECFA;
+                }
+            }
+
+            .wrapper {
+                position: relative;
+                z-index: 2;
+            }
+
+            .card__title {
+                .mix-title();
+                margin: @font-size_xs 0 @font-size_s 0;
+            }
+
+            .card__subtitle {
+                font-weight: @font-weight_l;
+                font-size: @font-size_xs - 2;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+//
+// Tablet
+//_______________________________
+
+@media (min-width: @screen_m) {
+    .recruitment {
+        .recruitment__header {
+            padding-top: @indent_xl - 2;
+
+            .subtitle_flex {
+                flex-direction: row;
+                align-items: baseline;
+                gap: @indent_l;
+            }
+        }
+
+        .recruitment__cards {
+            .recruitment__title {
+                font-size: @font-size_m + 4;
+                line-height: 39px;
+            }
+        }
+    }
+}
+
+//
+// Desktop
+//_______________________________
+
+@media (min-width: @screen_l) {
+    .recruitment {
+        .recruitment__header {
+            padding: @indent_xl;
+
+            .recruitment__title {
+                .mix-title(@font-size_xxl, 68px);
+                max-width: 363px;
+                float: left;
+            }
+
+            .recruitment__text {
+                max-width: 612px;
+                font-size: @font-size_s;
+                margin-top: 0;
+                line-height: 37px;
+            }
+
+            .subtitle_flex {
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 30px;
+            }
+        }
+
+        .recruitment__cards {
+            .recruitment__card {
+                &:before {
+                    font-size: 340px;
+                    right: 10%;
+                }
+            }
+
+            .card__title {
+                max-width: 260px;
+            }
+
+            .card__text {
+                max-width: 315px;
+            }
+        }
+    }
+}

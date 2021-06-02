@@ -1,0 +1,54 @@
+//
+// Screen sizes
+//_______________________________
+
+@screen_s: 320px;
+@screen_m: 777px;
+@screen_l: 1440px;
+
+//
+// Colors
+//_______________________________
+
+@color_brandprimary: rgb(24, 232, 164);
+@color_background_a: #D5D4D9;
+@color_background_b: #AEA9A8;
+
+//
+// Indents
+//_______________________________
+
+@indent_xs: 1.6rem;
+@indent_s: 2rem;
+@indent_m: 3rem;
+@indent_l: 5rem;
+@indent_xl: 10rem;
+
+//
+// Fonts
+//_______________________________
+
+@font-family_default: "Helvetica";
+
+@font-weight_s: 400;
+@font-weight_m: 500;
+@font-weight_l: 700;
+@font-weight_xl: 900;
+
+@font-size_xs: 16px;
+@font-size_s: 24px;
+@font-size_m: 32px;
+@font-size_l: 40px;
+@font-size_xl: 56px;
+@font-size_xxl: 62px;
+
+//
+// Mixins
+//_______________________________
+
+.mix-title ( @font-size:@font-size_m, @line-height:35px ) {
+    font-size: @font-size;
+    font-weight: @font-weight_xl;
+    line-height: @line-height;
+    letter-spacing: -1px;
+}

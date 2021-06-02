@@ -1,0 +1,74 @@
+//
+// Mobile
+//_______________________________
+
+.header {
+    padding: @indent_l @indent_s 0 @indent_s;
+
+    .header__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .header__column {
+        color: white;
+
+        &.header__logo {
+            margin-right: auto;
+        }
+
+        .header__link {
+            display: none;
+        }
+    }
+}
+
+//
+// Desktop
+//_______________________________
+
+@media (min-width: @screen_l) {
+    .header {
+        padding-top: 24px;
+    }
+
+    .header .header__column {
+        &.header__logo {
+            order: 1;
+            margin-right: 0;
+        }
+
+        &.header__contact {
+            order: 3;
+            padding: @indent_m / 4 @indent_m;
+            border: 2px solid @color_brandprimary;
+            border-radius: @indent_m;
+        }
+
+        &.header__menu {
+            order: 2;
+            margin: 0 auto;
+        }
+
+        .header__link {
+            display: block;
+            font-weight: @font-weight_l;
+
+            a {
+                padding-right: @indent_m;
+
+                &:last-child {
+                    color: @color_brandprimary;
+                    font-weight: @font-weight_xl;
+                }
+            }
+        }
+
+        .header__icon {
+            display: none;
+        }
+    }
+}
+
