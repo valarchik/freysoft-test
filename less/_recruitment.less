@@ -66,9 +66,13 @@
             border-radius: 16px;
             padding: @indent_m @indent_s @indent_xl @indent_s;
             position: relative;
-            margin-left: @indent_s;
             max-width: 620px;
-            min-width: 280px;
+            min-width: 260px;
+            margin-right: @indent_s;
+
+            &:nth-child(2n -1) {
+                margin-left: @indent_s;
+            }
 
             &:before {
                 counter-increment: section;

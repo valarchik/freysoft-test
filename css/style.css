@@ -331,9 +331,12 @@ body {
   border-radius: 16px;
   padding: 3rem 2rem 10rem 2rem;
   position: relative;
-  margin-left: 2rem;
   max-width: 620px;
-  min-width: 280px;
+  min-width: 260px;
+  margin-right: 2rem;
+}
+.recruitment .recruitment__cards .recruitment__card:nth-child(2n -1) {
+  margin-left: 2rem;
 }
 .recruitment .recruitment__cards .recruitment__card:before {
   counter-increment: section;
