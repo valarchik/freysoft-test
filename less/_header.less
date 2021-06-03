@@ -19,11 +19,115 @@
             margin-right: auto;
         }
 
-        .header__link {
+        .header__links {
             display: none;
         }
     }
 }
+
+#burger-menu {
+    cursor: pointer;
+    overflow: visible;
+    position: relative;
+    z-index: 2;
+    margin-left: 16px;
+
+    span {
+        background: #fff;
+        display: block;
+        height: 2px;
+        opacity: 1;
+        position: absolute;
+        transition: 0.3s ease-in-out;
+        right: 0;
+        top: 0;
+        width: 18px;
+    }
+
+    span:before {
+        content: "";
+        background: #fff;
+        display: block;
+        height: 2px;
+        opacity: 1;
+        position: absolute;
+        transition: 0.3s ease-in-out;
+        left: 0px;
+        top: -6px;
+        width: 18px;
+    }
+
+    span:after {
+        content: "";
+        background: #fff;
+        display: block;
+        height: 2px;
+        opacity: 1;
+        position: absolute;
+        transition: 0.3s ease-in-out;
+        left: 0px;
+        top: 6px;
+        width: 18px;
+    }
+
+    &.close {
+        span {
+            transform: rotate(-45deg);
+            width: 18px;
+        }
+
+        span:before {
+            top: 0px;
+            transform: rotate(90deg);
+            width: 18px;
+        }
+
+        span:after {
+            top: 0px;
+            left: 0;
+            transform: rotate(90deg);
+            opacity: 0;
+            width: 0;
+        }
+    }
+}
+
+#menu {
+    z-index: 1;
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 15px;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+    padding-top: 20px;
+    transition: all 0.3s ease-in-out;
+
+    &.overlay {
+        visibility: visible;
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    ul {
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        color: #fff;
+        display: block;
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-decoration: none;
+    }
+}
+
 
 //
 // Desktop
@@ -52,7 +156,7 @@
             margin: 0 auto;
         }
 
-        .header__link {
+        .header__links {
             display: block;
             font-weight: @font-weight_l;
 
@@ -69,6 +173,10 @@
         .header__icon {
             display: none;
         }
+    }
+
+    #burger-menu {
+        display: none;
     }
 }
 
